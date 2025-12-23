@@ -25,7 +25,6 @@ export function PictureFrame({
   image,
   imageScale = DEFAULT_IMAGE_SCALE,
   imageOffset,
-  imageInset = 0.01,
   children,
   ...groupProps
 }: PictureFrameProps) {
@@ -95,11 +94,11 @@ export function PictureFrame({
   return (
     <group {...groupProps}>
       <group rotation={[0.04, 0, 0]}>
-      <primitive object={frameScene} />
-      <mesh position={imagePosition} rotation={[0.435, Math.PI, 0]} material={pictureMaterial}>
-        <planeGeometry args={[imageWidth, imageHeight]} />
-      </mesh>
-      {children}
+        <primitive object={frameScene} />
+        <mesh position={imagePosition} rotation={[0.435, Math.PI, 0]} material={pictureMaterial}>
+          <planeGeometry args={[imageWidth, imageHeight]} />
+        </mesh>
+        {children}
       </group>
     </group>
   );

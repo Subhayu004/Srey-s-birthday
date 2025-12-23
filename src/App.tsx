@@ -524,11 +524,6 @@ export default function App() {
       if (!hasStarted) {
         playBackgroundMusic();
         setHasStarted(true);
-        return;
-      }
-      if (hasAnimationCompleted && isCandleLit) {
-        setIsCandleLit(false);
-        setFireworksActive(true);
       }
     };
 
@@ -583,7 +578,7 @@ export default function App() {
       </div>
       {hasAnimationCompleted && isCandleLit && (
         <div className="hint-overlay">
-          Press space / touch the screen / blow into mic to blow the candle 🎤
+          Press space / blow into mic to blow the candle 🎤
         </div>
       )}
       <Canvas
